@@ -1,0 +1,255 @@
+{
+"fullsize_decals_police": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Police Decals",
+	}
+    "slotType" : "fullsize_decals",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["fullsize_decal_police_fender_L", ["fullsize_fender_L"]],
+		 ["fullsize_decal_police_fender_R", ["fullsize_fender_R"]],
+		 
+		 ["fullsize_decal_police_door_FR", ["fullsize_door_FR"]],
+		 ["fullsize_decal_police_door_FL", ["fullsize_door_FL"]],
+		 ["fullsize_decal_police_door_RR", ["fullsize_door_RR"]],
+		 ["fullsize_decal_police_door_RL", ["fullsize_door_RL"]],
+		 
+		 ["fullsize_decal_police_quarterpanel", ["fullsize_body","fullsize_lowermounts_R","fullsize_uppermounts_R","fullsize_shocktop_R"]],
+	],
+}
+"fullsize_pushbar": {
+	"information":{
+		"authors":"gabester",
+		"name":"Gavril Grand Marshal Push Bar",
+	}
+	"selfCollisionThickness":0.02,
+	"remoteCollisionThickness":0.06,
+	"scalenodeWeight":0.95,
+	"scalebeamSpring":0.75,
+	"scalebeamDamp":0.73,
+	"scalebeamDeform":0.36,
+	"scalebeamStrength":0.65,
+    "slotType" : "fullsize_pushbar",
+	"flexbodies": [
+		 ["mesh", "[group]:", "nonFlexMaterials"],
+		 ["fullsize_pushbar", ["fullsize_pushbar"]],
+	],
+	 "nodes": [
+		 ["id", "posX", "posY", "posZ"],
+		 {"group":"fullsize_pushbar"},
+		 {"selfCollision":false}
+		 {"collision":true}
+		 {"nodeWeight":1.8},
+		 {"frictionCoef":0.7},
+		 {"nodeMaterial":"|NM_METAL"},
+		 //pushbar
+		 ["pb1r",-0.34, -2.32, 0.26],
+		 ["pb1", 0.0, -2.32, 0.26],
+		 ["pb1l", 0.34, -2.32, 0.26],
+		 {"selfCollision":true}
+		 ["pb2r",-0.34, -2.53, 0.28],
+		 ["pb2l", 0.34, -2.53, 0.28],
+		 {"selfCollision":false}
+		 ["pb3r",-0.34, -2.36, 0.56],
+		 ["pb3l", 0.34, -2.36, 0.56],
+		 {"selfCollision":true}
+		 ["pb4r",-0.34, -2.55, 0.56],
+		 ["pb4", 0.0, -2.55, 0.56],
+		 ["pb4l", 0.34, -2.55, 0.56],
+		 {"selfCollision":false}
+		 ["pb5r",-0.34, -2.33, 0.82],
+		 ["pb5l", 0.34, -2.33, 0.82],
+		 {"selfCollision":true}
+		 ["pb6r",-0.34, -2.46, 0.83],
+		 ["pb6", 0.0, -2.46, 0.83],
+		 ["pb6l", 0.34, -2.46, 0.83],
+	],
+	
+	"beams": [
+		  ["id1:", "id2:"],
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		  //pushbar		  
+		  {"beamSpring":2601000,"beamDamp":100},
+		  {"beamDeform":135000,"beamStrength":"FLT_MAX"},
+		  //main shape
+		  //widthwise
+		  ["pb1r","pb1"],
+		  ["pb1l","pb1"],
+		  ["pb4r","pb4"],
+		  ["pb4l","pb4"],
+		  ["pb6r","pb6"],
+		  ["pb6l","pb6"],
+		  
+		  {"beamDeform":205000,"beamStrength":"FLT_MAX"},
+		  //outline
+		  //r
+		  ["pb1r","pb2r"],
+		  ["pb2r","pb4r"],
+		  ["pb4r","pb6r"],
+		  ["pb6r","pb5r"],
+		  ["pb5r","pb3r"],
+		  ["pb3r","pb1r"],
+		  
+		  ["pb3r","pb4r"],
+		  
+		  //l
+		  ["pb1l","pb2l"],
+		  ["pb2l","pb4l"],
+		  ["pb4l","pb6l"],
+		  ["pb6l","pb5l"],
+		  ["pb5l","pb3l"],
+		  ["pb3l","pb1l"],
+		  
+		  ["pb3l","pb4l"],
+		  
+		  {"beamDeform":135000,"beamStrength":"FLT_MAX"},
+		  //more
+		  //r
+		  ["pb1r","pb4r"],
+		  ["pb2r","pb3r"],
+		  ["pb4r","pb5r"],
+		  ["pb3r","pb6r"],
+		  ["pb2r","pb4r"],
+		  
+		  //l
+		  ["pb1l","pb4l"],
+		  ["pb2l","pb3l"],
+		  ["pb4l","pb5l"],
+		  ["pb3l","pb6l"],
+		  ["pb2l","pb4l"],
+		  
+		  //rigids
+		  {"beamDeform":105000,"beamStrength":"FLT_MAX"},
+		  ["pb1r","pb5r"],
+		  ["pb2r","pb6r"],
+		  ["pb1r","pb6r"],
+		  ["pb2r","pb5r"],
+		  
+		  ["pb1l","pb5l"],
+		  ["pb2l","pb6l"],
+		  ["pb1l","pb6l"],
+		  ["pb2l","pb5l"],
+		  
+		  //w
+		  {"beamDeform":75000,"beamStrength":"FLT_MAX"},
+		  ["pb1r","pb1l"],
+		  ["pb4r","pb4l"],
+		  ["pb6r","pb6l"],
+		  
+		  ["pb2r","pb1"],
+		  ["pb2l","pb1"],
+		  ["pb3r","pb1"],
+		  ["pb3l","pb1"],
+		  ["pb2r","pb4"],
+		  ["pb2l","pb4"],
+		  ["pb3r","pb4"],
+		  ["pb3l","pb4"],
+		  ["pb5r","pb4"],
+		  ["pb5l","pb4"],
+		  ["pb6r","pb4"],
+		  ["pb6l","pb4"],
+		  ["pb5r","pb6"],
+		  ["pb5l","pb6"],
+		  ["pb4r","pb6"],
+		  ["pb4l","pb6"],
+		  ["pb3r","pb6"],
+		  ["pb3l","pb6"],
+		  //
+		  
+		  //attach
+		  {"beamDeform":115000,"beamStrength":165000},
+		  {"breakGroup":"fullsize_pushbar_R"},
+		  ["pb1r","f16r"],
+		  ["pb1r","f17r"],
+		  ["pb1r","f16"],
+		  ["pb1r","f17"],
+		  
+		  ["pb3r","f16r"],
+		  ["pb3r","f17r"],
+		  ["pb3r","f16"],
+		  ["pb3r","f17"],
+		  
+		  ["pb1r","f11rr"],
+		  
+		  {"breakGroup":"fullsize_pushbar_L"},
+		  ["pb1l","f16l"],
+		  ["pb1l","f17l"],
+		  ["pb1l","f16"],
+		  ["pb1l","f17"],
+		  
+		  ["pb3l","f16l"],
+		  ["pb3l","f17l"],
+		  ["pb3l","f16"],
+		  ["pb3l","f17"],
+		  
+		  ["pb1l","f11ll"],
+		  
+		  
+		  {"breakGroup":"fullsize_pushbar_M"},
+		  ["pb1","f16"],
+		  ["pb1","f17"],
+		  ["pb4","f16"],
+		  ["pb4","f17"],
+		  
+		  ["pb1","f11"],
+		  
+		  {"breakGroup":"fullsize_pushbar_bumper_R"},
+		  ["pb3r","fb2r"],
+		  ["pb4r","fb2r"],
+		  ["pb3r","fb2"],
+		  
+		  ["pb2r","fb3r"],
+		  ["pb1r","fb3r"],
+		  ["pb1r","fb3"],
+		  
+		  
+		  {"breakGroup":"fullsize_pushbar_bumper_L"},
+		  ["pb3l","fb2l"],
+		  ["pb4l","fb2l"],
+		  ["pb3l","fb2"],
+		  
+		  ["pb2l","fb3l"],
+		  ["pb1l","fb3l"],
+		  ["pb1l","fb3"],
+		  
+		  {"breakGroup":"fullsize_pushbar_bumper_M"},
+		  
+		  {"breakGroup":""},
+		  
+		  
+		  {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+	"triangles": [
+			["id1:","id2:","id3:"],
+			{"group":"fullsize_pushbar"},
+			["pb4","pb2l","pb4l"],
+			["pb4r","pb2r","pb4"],
+			["pb4","pb2r","pb1"],
+			["pb1","pb2l","pb4"],
+			
+			["pb6r","pb4r","pb4"],
+			["pb6r","pb4","pb6"],
+			["pb6l","pb4","pb4l"],
+			["pb6","pb4","pb6l"],
+			
+			["pb5r","pb6r","pb6"],
+			["pb6l","pb5l","pb6"],
+			
+			
+			//side
+			["pb4l","pb2l","pb1l"],
+			["pb4l","pb1l","pb3l"],
+			["pb6l","pb4l","pb3l"],
+			["pb6l","pb3l","pb5l"],
+			
+			//side
+			["pb2r","pb4r","pb1r"],
+			["pb1r","pb4r","pb3r"],
+			["pb4r","pb6r","pb3r"],
+			["pb3r","pb6r","pb5r"],
+			
+			{"group":""},
+	],
+}
+}
